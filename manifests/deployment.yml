@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kbalphaqa-bef9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kbalphaqa-bef9"
+  template:
+    metadata:
+      labels:
+        app: "kbalphaqa-bef9"
+    spec:
+      containers:
+        - name: "kbalphaqa-bef9"
+          image: "kbalphaweb.azurecr.io/kbalphaqa"
+          ports:
+          - containerPort: 80
