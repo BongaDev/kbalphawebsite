@@ -56,11 +56,33 @@ import {CommonModule} from '@angular/common';
 import { DevopsviewComponent } from './components/Portal/DevOpsViews/devopsview/devopsview.component';
 import { FormComponent } from './components/form/form.component';
 import { PartnersComponent } from './partners/partners.component';
+import { PortalsettingsComponent } from './components/Portal/PortalSettings/portalsettings/portalsettings.component';
+import { TradingComponent } from './components/Portal/trading/trading.component';
+import { CommodatiescompComponent } from './components/subcomponent/commodatiescomp/commodatiescomp.component';
+import {NgxEchartsModule} from 'ngx-echarts';
+import { EquatiescompComponent } from './components/subcomponent/equatiescomp/equatiescomp.component';
+import { NewscompComponent } from './components/subcomponent/newscomp/newscomp.component';
+import { MacroeconomicsComponent } from './components/subcomponent/macroeconomics/macroeconomics.component';
+import {EarningscompComponent} from './components/subcomponent/earningscomp/earningscomp.component';
+
+// ########### Calendar library #########
+ // must go before plugins (Calendar library)
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { TradingviewcompComponent } from './components/subcomponent/tradingviewcomp/tradingviewcomp.component'; // a plugin!
 
 
+ // register FullCalendar plugins
+FullCalendarModule.registerPlugins([
+  dayGridPlugin
+]);
 
 export function playerFactory(){
     return import('lottie-web');
+}
+
+export function loadEcharts() {
+  return import('echarts');
 }
 
 @NgModule({
@@ -94,6 +116,14 @@ export function playerFactory(){
     DevopsviewComponent,
     FormComponent,
     PartnersComponent,
+    PortalsettingsComponent,
+    TradingComponent,
+    CommodatiescompComponent,
+    EquatiescompComponent,
+    NewscompComponent,
+    MacroeconomicsComponent,
+    TradingviewcompComponent,
+    EarningscompComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +152,9 @@ export function playerFactory(){
     MatRadioModule,
     MatButtonModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    NgxEchartsModule.forRoot({ echarts: loadEcharts }),
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

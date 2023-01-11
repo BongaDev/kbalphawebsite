@@ -4,6 +4,8 @@ import { ClientDetails } from 'src/app/Server/Models/ClientDetails';
 import { Project } from 'src/app/Server/Models/Project';
 import {LocalDatabase} from 'src/app/Services/TempDataStore';
 import { Equations } from 'src/app/Server/Utils/Equations';
+import{QuoteDto} from 'src/app/Server/Models/QuoteDto';
+import{KbalphabusinessapiService} from '../../../Services/kbalphabusinessapi.service';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { Equations } from 'src/app/Server/Utils/Equations';
 })
 export class QuotegenerationviewComponent implements OnInit {
 
-  constructor() { this.ngOnInit(); }
+  constructor(private apiConnection: KbalphabusinessapiService) { this.ngOnInit(); }
 
   tempData = new LocalDatabase();
 

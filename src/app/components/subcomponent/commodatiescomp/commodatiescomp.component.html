@@ -1,0 +1,27 @@
+<div>
+    <div class="columns">
+
+        <!--commodaty data-->
+        <div class="column is-four-fifths">
+            <div style="height: 100%;" echarts [options]="chartOption" class="demo-chart"></div>
+        </div>
+    
+        <div class="column">
+            <mat-card>
+                <h1>Commodity codes</h1>
+                <hr>
+        
+                <!--Some space-->
+                <br>
+        
+                <!--Data pulled from api-->
+                <mat-selection-list *ngFor="let code of codes"  [multiple]="false">
+                    <mat-list-option>
+                        {{code}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card>
+        </div>
+    
+    </div>
+</div>

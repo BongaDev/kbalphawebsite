@@ -1,3 +1,56 @@
 <div>
-    
+    <br>
+    <!--Partners div section-->
+    <div>
+        <br>
+        <!--Header container-->
+        <div style="margin-left: 45%;">
+            <h1><label class="title is-1">Our Partners</label></h1>
+        </div>
+
+        <!--The grid list-->
+        <div>
+
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile *ngFor="let item of partners">
+                    <div>
+                        <!--Partner Card-->
+                        <img width="300"  src="/assets/{{item.partnerLogo}}"/>
+                        
+                        <br>
+                        <br>
+
+                        <!--List of product offerings-->
+                        <mat-list>
+                            <mat-list-item *ngFor="let innerItem of item.partnerServices">
+                                <mat-icon mat-list-icon>check_circle</mat-icon>
+                                <div mat-line>{{innerItem}}</div>
+                            </mat-list-item>
+                        </mat-list>
+                        
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </div>
+    </div>
+
+    <!--Clients div section-->
+    <div>
+
+        <br>
+        <br>
+
+        <!--Header for clients-->
+        <div>
+            <!--<h1 style="margin-left: 45%;">
+                <label style="color: black;" class="title is-1">Our Clients</label>
+            </h1>-->
+        </div>
+
+       <div class="columns">
+           <!--All the clients-->
+           <!--txt file in the core development channel on teams search: 16/06/2022 3:23pm-->
+       </div> 
+    </div>
 </div>

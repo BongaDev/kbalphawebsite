@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {KbalphabusinessapiService} from 'src/app/Services/kbalphabusinessapi.service'
 
 @Component({
   selector: 'app-crmdataview',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrmdataviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiConnection: KbalphabusinessapiService) { }
 
   ngOnInit(): void {
+
+    //Get the list of contacts from hubspot on loading page
+    this.apiConnection.getContacts();
   }
 
 }
